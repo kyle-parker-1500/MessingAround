@@ -6,7 +6,7 @@
     <string name="celcius_value_2">Celcius Value</string>
     <string name="convert">Convert</string>
     <string name="degrees_fahrenheit">%1$.2f°f</string>
-    <string name="degrees_celsius">%1$.2f°f</string>
+    <string name="degrees_celsius">%1$.2f°c</string>
     <string name="celsius_to_fahrenheit_converter">Celsius to Fahrenheit Converter</string>
     <string name="fahrenheit_value">Fahrenheit Value</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.ctofconverter.Utils.Converters;
 import com.example.ctofconverter.databinding.ActivityFtoCactivityBinding;
 
 import java.util.Locale;
@@ -32,6 +34,13 @@ public class FtoCActivity extends AppCompatActivity {
         double fahrenheit = getIntent().getDoubleExtra(CONVERTED_VALUE_EXTRA_KEY, 0.0);
         binding.fahrenheitValueEditText.setText(String.format(Locale.ENGLISH, "%.2f", fahrenheit));
 
+        binding.cToFTitleTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(FtoCActivity.this, "It worked!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         binding.cToFTitleTextView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -41,6 +50,24 @@ public class FtoCActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private double convertValue() {
+        String enteredValue = binding.fahrenheitValueEditText.getText().toString();
+
+        double valueToConvert = 0;
+        if (!enteredValue.isEmpty()) {
+            valueToConvert = Double.parseDouble(enteredValue);
+        }
+        valueToConvert = Converters.fahrenheitToCelsius(valueToConvert);
+
+        return valueToConvert;
+    }
+
+    public void displayConvertedValue(View view) {
+        binding.fahrenheitConvertedValueTextView.setText(
+                getString(R.string.degrees_celsius, convertValue())
+        );
     }
 
     public static Intent fToCIntentFactory(Context context, double fahrenheitValue) {

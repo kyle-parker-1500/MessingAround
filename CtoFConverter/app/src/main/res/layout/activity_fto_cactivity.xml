@@ -5,19 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="displayConvertedValue"
     tools:context=".FtoCActivity">
-    
+
     <TextView
+        android:id="@+id/cToFTitleTextView"
         android:layout_width="275dp"
         android:layout_height="75dp"
-        android:id="@+id/cToFTitleTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/celsius_to_fahrenheit_converter"
         android:gravity="center"
-        android:textSize="24sp" />
-    
+        android:text="@string/celsius_to_fahrenheit_converter"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/fahrenheitValueEditText"
         android:layout_width="wrap_content"
@@ -44,16 +45,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fahrenheitValueEditText" />
 
-    <TextView
-        android:id="@+id/fahrenheitConvertedValue"
-        android:layout_width="163dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
+    <Button
+        android:id="@+id/fahrenheitConvertButton"
+        android:layout_width="151dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="@string/degrees_celsius"
-        android:textSize="16sp"
+        android:onClick="displayConvertedValue"
+        android:text="@string/convert"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fahrenheitValueLabelTextView" />
+
+    <TextView
+        android:id="@+id/fahrenheitConvertedValueTextView"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="42.00°c"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fahrenheitConvertButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
