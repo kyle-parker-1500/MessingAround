@@ -10,12 +10,50 @@
     <TextView
         android:layout_width="275dp"
         android:layout_height="75dp"
-        android:id="@+id/fToCTitleTextView"
+        android:id="@+id/cToFTitleTextView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/celsius_to_fahrenheit_converter"
         android:gravity="center"
         android:textSize="24sp" />
+    
+    <EditText
+        android:id="@+id/fahrenheitValueEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/enter_a_value_to_convert"
+        android:inputType="number|numberDecimal|numberSigned"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cToFTitleTextView" />
+
+    <TextView
+        android:id="@+id/fahrenheitValueLabelTextView"
+        android:layout_width="163dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/celcius_value"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fahrenheitValueEditText" />
+
+    <TextView
+        android:id="@+id/fahrenheitConvertedValue"
+        android:layout_width="163dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/degrees_celsius"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fahrenheitValueLabelTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
