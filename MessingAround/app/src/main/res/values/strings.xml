@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MessingAround</string>
+    <string name="this_is_a_title">This is a title.</string>
+    <string name="i_have_some_text">I have some text.</string>
+    <string name="i_am_a_button">I am a button.</string>
+</resources>
