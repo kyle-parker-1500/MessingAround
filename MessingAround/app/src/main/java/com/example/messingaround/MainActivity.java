@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textDisplayTextView;
     EditText getInputEditText;
     String userInputText;
+    public static final String TAG = "MAIN ACTIVITY :: ";
 
 
     @Override
